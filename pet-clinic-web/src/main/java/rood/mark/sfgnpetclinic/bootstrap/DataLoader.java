@@ -15,6 +15,11 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetSerice;
     private final OwnerService ownerService;
 
+    public DataLoader(VetService vetSerice, OwnerService ownerService) {
+        this.vetSerice = vetSerice;
+        this.ownerService = ownerService;
+    }
+
     public DataLoader() {
         ownerService = new OwnerServiceMap();
         vetSerice = new VetSeviceMap();
