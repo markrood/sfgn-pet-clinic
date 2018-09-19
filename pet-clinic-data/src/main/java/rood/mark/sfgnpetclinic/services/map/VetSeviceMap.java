@@ -1,30 +1,29 @@
 package rood.mark.sfgnpetclinic.services.map;
 
-import rood.mark.sfgnpetclinic.model.Pet;
-import rood.mark.sfgnpetclinic.services.CrudService;
+import rood.mark.sfgnpetclinic.model.Vet;
+import rood.mark.sfgnpetclinic.services.VetService;
 
-import java.awt.peer.WindowPeer;
 import java.util.Set;
 
-public class VetSeviceMap extends AbstractMapService<Pet,Long> implements CrudService<Pet, Long> {
+public class VetSeviceMap extends AbstractMapService<Vet,Long> implements VetService {
 
     @Override
-    public Set<Pet> findAll() {
+    public Set<Vet> findAll() {
         return super.findAll();
     }
 
     @Override
-    public Pet findById(Long id) {
+    public Vet findById(Long id) {
         return super.findById(id);
     }
 
     @Override
-    public Pet save(Pet object) {
+    public Vet save(Vet object) {
         return super.save(object.getId(),object);
     }
 
     @Override
-    public void delete(Pet object) {
+    public void delete(Vet object) {
         super.delete(object);
 
     }
