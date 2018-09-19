@@ -6,8 +6,6 @@ import rood.mark.sfgnpetclinic.model.Owner;
 import rood.mark.sfgnpetclinic.model.Vet;
 import rood.mark.sfgnpetclinic.services.OwnerService;
 import rood.mark.sfgnpetclinic.services.VetService;
-import rood.mark.sfgnpetclinic.services.map.OwnerServiceMap;
-import rood.mark.sfgnpetclinic.services.map.VetSeviceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -20,10 +18,7 @@ public class DataLoader implements CommandLineRunner {
         this.ownerService = ownerService;
     }
 
-    public DataLoader() {
-        ownerService = new OwnerServiceMap();
-        vetSerice = new VetSeviceMap();
-    }
+
 
     @Override
     public void run(String... args) throws Exception {
