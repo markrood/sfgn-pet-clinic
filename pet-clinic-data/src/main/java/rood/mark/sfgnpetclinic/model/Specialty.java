@@ -11,4 +11,3 @@ public class Specialty extends BaseEntity{
         this.description = description;
     }
 }
-}
