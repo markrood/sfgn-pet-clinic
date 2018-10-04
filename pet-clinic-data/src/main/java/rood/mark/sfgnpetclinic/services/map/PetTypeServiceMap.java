@@ -6,7 +6,7 @@ import rood.mark.sfgnpetclinic.services.PetTypeService;
 
 import java.util.Set;
 @Service
-public class PetTypeMap extends AbstractMapService<PetType,Long> implements PetTypeService {
+public class PetTypeServiceMap extends AbstractMapService<PetType,Long> implements PetTypeService {
 
     @Override
     public Set<PetType> findAll() {
