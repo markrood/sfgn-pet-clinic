@@ -1,10 +1,10 @@
 package rood.mark.sfgnpetclinic.model;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name ="visit")
 public class Visit extends BaseEntity{
 
     @Column(name = "date")
