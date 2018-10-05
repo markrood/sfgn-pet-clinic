@@ -1,15 +1,15 @@
 package rood.mark.sfgnpetclinic.services.springdatajpa;
 
 import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 import rood.mark.sfgnpetclinic.model.Pet;
 import rood.mark.sfgnpetclinic.repositories.PetRepository;
 import rood.mark.sfgnpetclinic.services.PetService;
 
-import javax.persistence.Entity;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
+@Service
 @Profile("springdatajpa")
 public class PetSDJpaService implements PetService {
 

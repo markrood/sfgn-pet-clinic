@@ -1,15 +1,15 @@
 package rood.mark.sfgnpetclinic.services.springdatajpa;
 
 import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Service;
 import rood.mark.sfgnpetclinic.model.Specialty;
 import rood.mark.sfgnpetclinic.repositories.SpecialtyRepository;
 import rood.mark.sfgnpetclinic.services.SpecialtyService;
 
-import javax.persistence.Entity;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
+@Service
 @Profile("springdatajpa")
 public class SpecialtySDJpaService implements SpecialtyService {
 
