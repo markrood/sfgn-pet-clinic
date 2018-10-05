@@ -3,10 +3,7 @@ package rood.mark.sfgnpetclinic.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import rood.mark.sfgnpetclinic.model.*;
-import rood.mark.sfgnpetclinic.services.OwnerService;
-import rood.mark.sfgnpetclinic.services.PetTypeService;
-import rood.mark.sfgnpetclinic.services.SpecialtyService;
-import rood.mark.sfgnpetclinic.services.VetService;
+import rood.mark.sfgnpetclinic.services.*;
 
 import java.time.LocalDate;
 
@@ -17,13 +14,16 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
 
-    public DataLoader(VetService vetSerice, OwnerService ownerService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataLoader(VetService vetSerice, OwnerService ownerService, PetTypeService petTypeService, SpecialtyService specialtyService,
+                      VisitService visitService) {
         this.vetSerice = vetSerice;
         this.ownerService = ownerService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -88,6 +88,12 @@ public class DataLoader implements CommandLineRunner {
         owner2.getPets().add(skippysPet);
 
         ownerService.save(owner2);
+
+        Visit visit = new Visit();
+        visit.setPet(skippysPet);
+        visit.setDate(LocalDate.now());
+        visit.setDescription("smelly kitty");
+        visitService.save(visit);
 
         System.out.println("Loaded Owners");
 
