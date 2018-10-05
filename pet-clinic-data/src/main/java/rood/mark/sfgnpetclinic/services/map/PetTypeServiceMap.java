@@ -1,11 +1,13 @@
 package rood.mark.sfgnpetclinic.services.map;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import rood.mark.sfgnpetclinic.model.PetType;
 import rood.mark.sfgnpetclinic.services.PetTypeService;
 
 import java.util.Set;
 @Service
+@Profile({"default", "map"})
 public class PetTypeServiceMap extends AbstractMapService<PetType,Long> implements PetTypeService {
 
     @Override

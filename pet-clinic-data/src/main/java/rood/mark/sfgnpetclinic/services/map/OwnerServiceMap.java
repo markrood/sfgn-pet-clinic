@@ -1,5 +1,6 @@
 package rood.mark.sfgnpetclinic.services.map;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import rood.mark.sfgnpetclinic.model.Owner;
 import rood.mark.sfgnpetclinic.model.Pet;
@@ -10,6 +11,7 @@ import rood.mark.sfgnpetclinic.services.PetTypeService;
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     private final PetTypeService petTypeService;
